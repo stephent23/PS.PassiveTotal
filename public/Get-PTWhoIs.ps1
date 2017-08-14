@@ -4,9 +4,9 @@ Function Get-PTWhoIs {
         [string]$Domain
     )
 
-    $uri = "https://api.passivetotal.org/v2/whois"
+    $uri = "https://api.passivetotal.org/v2/whois?query={0}" -f $Domain
     $auth = Get-PTAuthentication
     
 
-    Invoke-RestMethod -Method Get -Headers @{ Authorization=$auth } -Uri $URI -Body { "query:$($Domain)" } -ContentType 'application/jso'
+    Invoke-RestMethod -Method Get -Headers $auth -Uri $URI -ContentType 'application/json'
 }
