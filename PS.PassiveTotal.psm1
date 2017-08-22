@@ -20,7 +20,8 @@ if ($Private.Count -ge 1) {
 
 
 # Public functions
-[Array]$Public = 'Get-PTWhoIs'
+[Array]$Public = 'Get-PTWhoIs',
+                 'Search-PTWhoIs'
 
 if ($Public.Count -ge 1) {
   $Public | ForEach-Object {
